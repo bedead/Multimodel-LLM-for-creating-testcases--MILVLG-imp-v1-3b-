@@ -1,9 +1,18 @@
+import os
 import gradio as gr
 
-from llm import response
+
+def response(USER_DATA, TOKEN) -> str:
+    return "ok"
+
 
 with gr.Blocks() as llm:
     slider = gr.Slider(10, 100, render=False)
-    gr.ChatInterface(response, multimodal=True)
+    chatbot = gr.ChatInterface(
+        fn=response,
+        multimodal=True,
+        title="MultiModel LLM for Testcase generation",
+        cache_examples=True,
+    )
 
 llm.launch(debug=True)
