@@ -1,10 +1,6 @@
 import os
 import gradio as gr
-
-
-def response(USER_DATA, TOKEN) -> str:
-    return "ok"
-
+from llm import response
 
 with gr.Blocks() as llm:
     slider = gr.Slider(10, 100, render=False)
