@@ -2,6 +2,9 @@
 
 This project implements a multimodal Large Language Model (LLM) using Gradio for the user interface.
 
+## Colab
+Mostly everything is already setuped in ipynb file, to use with gradio UI. Use it with Google Colab for GPU. 
+
 ## Prerequisites
 
 - [Python](https://www.python.org/) 3.7+
