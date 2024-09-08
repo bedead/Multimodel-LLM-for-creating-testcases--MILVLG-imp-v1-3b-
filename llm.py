@@ -21,23 +21,16 @@ def response(USER_DATA, TOKEN) -> str:
     FILES = USER_DATA["files"]
 
     SYSTEM_PROMPT = f"""
-    A chat between a curious user and an artificial intelligence assistant. The assistant generates helpful, and detailed testcases for software/website testing.
-    You are tasked with generating detailed, step-by-step test cases for software functionality based on uploaded images. The user will provide one or more images of a software or website interface. For each image, generate a separate set of test cases following the format below:
+    A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed testcase related to image uploaded. You are tasked with generating detailed, step-by-step test cases for software functionality based on uploaded images. The user will provide one or more images of a software or website interface. For each image, generate a separate set of test cases following the format below:
 
-    Description: Provide a brief explanation of the functionality being tested, as inferred from the image.
-
+    '''Description: Provide a brief explanation of the functionality being tested, as inferred from the image.
     Pre-conditions: Identify any setup requirements, dependencies, or conditions that must be met before testing can begin (e.g., user logged in, specific data pre-populated, etc.).
-
     Testing Steps: Outline a clear, numbered sequence of actions that a user would take to test the functionality in the image.
-
-    Expected Result: Specify the expected outcome if the functionality is working as intended.
+    Expected Result: Specify the expected outcome if the functionality is working as intended.'''
 
     Ensure that:
-
-    Test cases are created independently for each image.
-    The functionality from each image is fully covered in its own set of test cases.
-    Any assumptions you make are clearly stated.
-    The focus is on usability, navigation, and feature correctness as demonstrated in the UI of the uploaded images.
+    Testcases should be related to validation of data, component interactions, navigation, etc.
+    Each testcase should have it's own Description, Pre-conidtions, Testing Steps, Expected Result.
 
     USER: <image>\n{MESSAGE}
     ASSISTANT:
